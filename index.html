@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="scroller"></div>
+    <section class="section">
+      <!-- Start menu  -->
+      <div class="toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <nav>
+        <span class="close">X</span>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Service</a>
+        <a href="#">Contact</a>
+      </nav>
+
+      <!-- End menu  -->
+      <!-- start animation typing machine  -->
+      <p class="typing">Welcome to : Ahmed Basouney</p>
+      <!-- End animation typing machine  -->
+      <div class="container">
+        <a href="#" data-text="Ahmed Basouny" class="link">
+          <span>Ahmed Basouny</span>
+        </a>
+      </div>
+      <h2 class="fill" data-fill="Hover Me">Hover Me</h2>
+      <hr />
+      <button class="tooltip">Click <span>you clicked here</span></button>
+
+      <!-- Start hover effect on card 1 -->
+      <div class="card">
+        <h3>Product Title</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo harum
+          totam perspiciatis veniam! Molestias quia rem nemo magni consequuntur
+        </p>
+      </div>
+      <!-- End hover effect on card 1 -->
+
+      <!-- Start hover effect on card 2  -->
+      <div class="card-hover_effect">
+        <span class="number">01</span>
+        <h2 class="card-title">Product two</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
+          laborum aspernatur cupiditate eaque perferendis aliquid. Culpa ut
+          illum aperiam neque, nihil, temporibus id veniam placeat mollitia
+          quibusdam sed. Laborum, voluptatibus.
+        </p>
+      </div>
+      <!-- End hover effect on card 2 -->
+      <!-- Start control on Radio and custom effect -->
+      <form class="form" action="">
+        <div>
+          <input type="radio" id="mac" name="ahmed" />
+          <label for="mac">Mac</label>
+        </div>
+        <div>
+          <input type="radio" id="win" name="ahmed" />
+          <label for="win">Windows</label>
+        </div>
+        <div>
+          <input type="radio" id="lin" name="ahmed" />
+          <label for="lin">linux</label>
+        </div>
+      </form>
+
+      <!-- End control on Radio and custom effect -->
+
+      <!-- start scroll to top  -->
+      <span class="up">Up</span>
+      <!-- End scroll to top  -->
+
+      <!-- Start tabs  -->
+
+      <div class="tab">
+        <button class="tablinks" onclick="openCity(event, 'London')">
+          London
+        </button>
+        <button class="tablinks" onclick="openCity(event, 'Paris')">
+          Paris
+        </button>
+        <button class="tablinks" onclick="openCity(event, 'Tokyo')">
+          Tokyo
+        </button>
+      </div>
+
+      <!-- Tab content -->
+
+      <div id="London" class="tabcontent">
+        <h3>
+          Tab one <br />
+          (London)
+        </h3>
+        <p>London is the capital city of England.</p>
+      </div>
+
+      <div id="Paris" class="tabcontent">
+        <h3>
+          Tab two <br />
+          (Paris)
+        </h3>
+        <p>Paris is the capital of France.</p>
+      </div>
+
+      <div id="Tokyo" class="tabcontent">
+        <h3>
+          Tab three <br />
+          (Tokyo)
+        </h3>
+        <p>Tokyo is the capital of Japan.</p>
+      </div>
+      <!-- End tabs  -->
+
+      <!-- Start Generate random serial  -->
+      <div class="random">
+        <h6>Generate Random serial</h6>
+        <div class="serial">Serial</div>
+        <button class="generate">Generate</button>
+      </div>
+      <!-- End Generate random serial  -->
+
+      <!-- Start Tabs section filter from all to spacfic  -->
+      <div class="switcher-container">
+        <ul class="switcher">
+          <li class="tab-button active" data-cont="all">All Work</li>
+          <li class="tab-button" data-cont="design">Design</li>
+          <li class="tab-button" data-cont="mobile">Mobile</li>
+          <li class="tab-button" data-cont="shuffle">shuffle</li>
+        </ul>
+        <div class="gallery">
+          <img class="card design" src="images/design-features.jpg" alt="" />
+          <img class="card design" src="images/design-features.jpg" alt="" />
+          <img class="card design" src="images/design-features.jpg" alt="" />
+          <img class="card design" src="images/design-features.jpg" alt="" />
+          <img class="card mobile" src="images/mobile.png" alt="" />
+          <img class="card mobile" src="images/mobile.png" alt="" />
+          <img class="card mobile" src="images/mobile.png" alt="" />
+          <img class="card mobile" src="images/mobile.png" alt="" />
+          <img class="card shuffle" src="images/shuffle-01.jpg" alt="" />
+          <img class="card shuffle" src="images/shuffle-01.jpg" alt="" />
+          <img class="card shuffle" src="images/shuffle-01.jpg" alt="" />
+          <img class="card shuffle" src="images/shuffle-01.jpg" alt="" />
+        </div>
+      </div>
+      <!-- End Tabs section filter from all to spacfic  -->
+      <div class="random-background"></div>
+    </section>
+    <script src="index.js"></script>
+  </body>
+</html>

@@ -7,7 +7,7 @@
 body {
   font-family: sans-serif;
   background-color: #333;
-  min-height: 5000px;
+  min-height: 8000px;
 }
 /* start scroller  */
 .scroller {
@@ -621,3 +621,130 @@ h3::before {
   height: 15px;
   border: 1px solid white;
 }
+
+/* Start Progress in input  */
+.progress-input {
+  width: 400px;
+  margin: 30px auto;
+  padding: 15px 10px;
+  text-align: center;
+}
+.progress-input label {
+  display: block;
+  margin-bottom: 10px;
+}
+.progress-input .input {
+  width: 100%;
+  padding: 15px;
+  font-size: 20px;
+  background-color: #777;
+  border: none;
+  border-bottom: 2px solid white;
+  color: white;
+  border-radius: 5px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.progress-input .input:focus {
+  outline: none;
+}
+.progress-input .input::placeholder {
+  color: rgb(211, 210, 210);
+}
+.progress {
+  display: block;
+  position: relative;
+  top: -2px;
+  height: 3px;
+  width: 0;
+  background-color: #8b2ebc;
+  transition: 0.3s;
+}
+.count-progress {
+  margin-left: auto;
+  text-align: right;
+  padding: 5px;
+  font-weight: 500;
+  background-color: #777;
+  border-bottom: 1px solid white;
+  color: white;
+  border-radius: 2px;
+  width: fit-content;
+}
+
+.zero {
+  color: red;
+  font-weight: bold;
+}
+/* End Progress in input  */
+
+/* Start CountDown section  */
+.countdown {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #222;
+}
+
+.countdown-timer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.countdown-item {
+  border: 1px solid wheat;
+  border-radius: 20px;
+  padding: 20px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 10px;
+}
+
+.countdown-number {
+  font-size: 4rem;
+  font-weight: bold;
+  color: #fff;
+  border-bottom: 1px solid wheat;
+}
+
+.countdown-label {
+  font-size: 1.2rem;
+  color: #fff;
+  text-transform: uppercase;
+  margin-top: 10px;
+  letter-spacing: 1px;
+}
+
+/* End CountDown section  */
+
+/* Start a progress bar for skills */
+.section-skills {
+  width: 100%;
+  height: 70vh;
+}
+
+.skill {
+  margin: 20px auto;
+  max-width: 50%;
+}
+
+.skill .progress-bar {
+  height: 10px;
+  background-color: #ccc;
+  border-radius: 5px;
+}
+
+.skill .progress-bar span {
+  content: "";
+  display: block;
+  height: 100%;
+  background-color: #0909c2;
+  border-radius: 5px;
+  width: 0;
+  transition: width 0.5s ease-in-out;
+}
+
+/* End a progress bar for skills */

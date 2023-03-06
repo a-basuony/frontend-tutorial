@@ -149,3 +149,81 @@ let randBackgroundColor = document.querySelector(".random-background .color");
 randBackgroundColor.style.background = finalColor;
 
 document.body.style.background = finalColor;
+
+//Start progress in input
+let input = document.querySelector(".progress-input .input");
+let count = document.querySelector(".progress-input .count-progress");
+let progress = document.querySelector(".progress-input .progress");
+let maxLength = input.getAttribute("maxlength");
+
+count.innerHTML = maxLength;
+input.value.length = maxLength;
+
+input.oninput = function () {
+  count.innerHTML = maxLength - input.value.length;
+  count.innerHTML == 0
+    ? count.classList.add("zero")
+    : count.classList.remove("zero");
+
+  // start progress
+  progress.style.width = `${(input.value.length * 100) / maxLength}%`;
+};
+
+//End progress in input
+
+//Start CountDown section
+// Set the date we're counting down to
+var countDownDate = new Date("Dec 31, 2023 00:00:00").getTime();
+
+// Update the countdown every second
+var x = setInterval(function () {
+  // Get today's date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+
+  // Calculate the days, hours, minutes and seconds remaining
+  var months = Math.floor(distance / (1000 * 60 * 60 * 24 * 30));
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Output the result in the timer element
+  document.getElementById("months").innerHTML =
+    months < 10 ? `0${months}` : months;
+  document.getElementById("days").innerHTML = days < 10 ? `0${days}` : days;
+  document.getElementById("hours").innerHTML = hours < 10 ? `0${hours}` : hours;
+  document.getElementById("minutes").innerHTML =
+    minutes < 10 ? `0${minutes}` : minutes;
+  document.getElementById("seconds").innerHTML =
+    seconds < 10 ? `0${seconds}` : seconds;
+
+  // If the countdown is finished, display a message
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("countdown-timer").innerHTML = "EXPIRED";
+  }
+}, 1000);
+
+//End CountDown section
+// Start progress bar for skills
+let section = document.querySelector(".section-skills");
+let progressBar = document.querySelectorAll(".progress-bar");
+let spans = document.querySelectorAll(".progress-bar span");
+
+window.addEventListener("scroll", function () {
+  if (window.scrollY >= section.offsetTop - 600) {
+    spans.forEach((span, i) => {
+      let progress = progressBar[i].getAttribute("data-progress");
+      span.style.width = progress + "%";
+    });
+  } else {
+    spans.forEach((span) => {
+      span.style.width = "0";
+    });
+  }
+});
+
+// End progress bar for skills

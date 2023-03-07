@@ -28,25 +28,61 @@ body {
   position: fixed;
   right: 10px;
   top: 10px;
-  width: 40px;
-  height: 40px;
-  padding: 8px;
+  width: 30px;
+  height: 26px;
+  padding: 3px;
+
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
   cursor: pointer;
 }
-.toggle span {
+/* .toggle span {
   width: 100%;
   height: 4px;
   background-color: #777;
   transition: 0.3s;
-}
+} */
 .toggle:hover span {
   background-color: #111;
 }
 
+.toggle span {
+  width: 90% !important;
+  height: 3px !important;
+  margin: 1px;
+  background-color: #777;
+  height: 2px;
+  position: absolute;
+  left: 0;
+  transition: all 0.3s ease;
+}
+.toggle span:first-child {
+  top: 6px;
+}
+.toggle span:nth-child(2) {
+  top: 12px;
+}
+.toggle span:nth-child(3) {
+  top: 18px;
+}
+
+.toggle:hover span:nth-child(2) {
+  opacity: 0;
+}
+.toggle:hover span:first-child,
+.toggle:hover span:last-child {
+  top: 12px;
+  background-color: red;
+}
+.toggle:hover span:first-child {
+  transform: rotate(45deg);
+}
+.toggle:hover span:last-child {
+  transform: rotate(-45deg);
+}
+/* End toggle  */
 nav {
   width: 100%;
   height: 100%;
@@ -446,10 +482,10 @@ h3::before {
 /* End control on Radio and custom effect  */
 
 /* Start scroll to top  */
-.up {
+.up-span {
   position: fixed;
   right: -90px;
-  bottom: 10px;
+  left: 10px;
   background-color: coral;
   color: white;
   border-radius: 10px;
@@ -459,9 +495,10 @@ h3::before {
   font-family: serif;
   transition: 0.4s;
   cursor: pointer;
+  z-index: 99999;
 }
-.up.show {
-  right: 10px;
+.show {
+  right: 50px !important;
 }
 
 /* Ent scroll to top  */
@@ -596,7 +633,7 @@ h3::before {
   align-items: center;
   margin-bottom: 20px;
 }
-.card {
+.gallery .card {
   background-color: #fff;
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
@@ -733,7 +770,7 @@ h3::before {
 
 .skill .progress-bar {
   height: 10px;
-  background-color: #ccc;
+  background-color: #ffffff;
   border-radius: 5px;
 }
 
@@ -748,3 +785,51 @@ h3::before {
 }
 
 /* End a progress bar for skills */
+
+/* Stat increase numbers when window scroll  */
+.nums {
+  width: 100%;
+  padding: 10px 50px;
+  margin: 50px auto;
+  background-color: #b1b0b0;
+  display: flex;
+  flex-direction: row;
+}
+.num {
+  text-align: center;
+  margin: 10px;
+  padding: 10px;
+  flex: 1;
+  font-size: 26px;
+  font-weight: bold;
+  border-bottom: 1px solid black;
+}
+/* End increase numbers when window scroll  */
+
+/* start wave background  */
+.page {
+  height: 100vh;
+}
+.page::before {
+  content: "";
+  position: fixed;
+  width: 300%;
+  height: 100%;
+  background-color: #0075ff;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) skew(0, -10deg);
+  border-radius: 50%;
+  z-index: -1;
+  animation: wave 10s ease-in-out infinite alternate;
+}
+
+@keyframes wave {
+  from {
+    transform: translateX(-50%) skew(0, -10deg);
+  }
+  to {
+    transform: translateX(-30%) skew(10deg, 0);
+  }
+}
+/* start wave background  */

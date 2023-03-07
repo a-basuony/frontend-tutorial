@@ -36,11 +36,11 @@ document.onkeyup = function (e) {
 // End menu
 
 // Start Scroll to Top
-let up = document.querySelector(".up");
+let up = document.querySelector(".up-span");
 
+//this.scrollY or window.pageYoffset
 window.onscroll = function () {
-  // console.log(this.scrolly);
-  if (this.scrollY >= 500) {
+  if (window.pageYOffset >= 500) {
     up.classList.add("show");
   } else {
     up.classList.remove("show");
@@ -227,3 +227,29 @@ window.addEventListener("scroll", function () {
 });
 
 // End progress bar for skills
+// start increase numbers on window scroll
+let nums = document.querySelectorAll(".nums .num");
+let sectionNum = document.querySelector(".nums");
+let started = false; // function started ? no
+
+window.onscroll = function () {
+  if (window.scrollY >= sectionNum.offsetTop - 500) {
+    if (!started) {
+      nums.forEach((num) => startedCount(num));
+    }
+    started = true;
+  }
+};
+
+function startedCount(el) {
+  let goal = el.dataset.goal;
+  let count = setInterval(() => {
+    el.textContent++;
+    if (+el.textContent >= goal) {
+      clearInterval(count);
+      el.textContent = goal; // set the final value
+    }
+  }, 1000 / goal); // reduce the interval time to make the animation smoother
+}
+
+// End increase numbers on window scroll
